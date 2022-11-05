@@ -46,7 +46,8 @@ fun JetCoffeeApp() {
     }) {
         Column {
             Banner()
-            HomeSection(title = stringResource(R.string.section_category),
+            HomeSection(
+                title = stringResource(R.string.section_category),
                 content = { CategoryRow() })
             HomeSection(title = stringResource(R.string.section_best_seller_menu),
                 content = { MenuRow(dummyMenu) })
@@ -106,6 +107,8 @@ fun BottomBar(
     modifier: Modifier = Modifier
 ) {
     BottomNavigation(
+        backgroundColor = MaterialTheme.colors.background,
+        contentColor = MaterialTheme.colors.primary,
         modifier = modifier
     ) {
         val navigationItems = listOf(
