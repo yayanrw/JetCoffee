@@ -11,12 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.heyproject.jetcoffee.model.dummyCategory
 import com.heyproject.jetcoffee.ui.components.CategoryItem
 import com.heyproject.jetcoffee.ui.components.SearchBar
+import com.heyproject.jetcoffee.ui.components.SectionText
 import com.heyproject.jetcoffee.ui.theme.JetCoffeeTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,6 +36,8 @@ class MainActivity : ComponentActivity() {
 fun JetCoffeeApp() {
     Column {
         Banner()
+        SectionText(stringResource(R.string.section_category))
+        CategoryRow()
     }
 }
 
