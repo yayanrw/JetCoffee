@@ -38,7 +38,7 @@ fun CategoryItem(
                 .clip(CircleShape)
         )
         Text(text = stringResource(
-            id = R.string.category_cappuccino),
+            id = category.textCategory),
             fontSize = 10.sp,
             modifier = Modifier.paddingFromBaseline(top = 16.dp, bottom = 8.dp)
         )
