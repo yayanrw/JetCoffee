@@ -7,6 +7,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -40,14 +42,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun JetCoffeeApp() {
+fun JetCoffeeApp(modifier: Modifier = Modifier) {
     Scaffold(bottomBar = {
         BottomBar()
-    }) {
-        Column {
+    }) { innerPadding ->
+        Column(
+            modifier = modifier
+                .verticalScroll(rememberScrollState())
+                .padding(innerPadding)
+        ) {
             Banner()
-            HomeSection(
-                title = stringResource(R.string.section_category),
+            HomeSection(title = stringResource(R.string.section_category),
                 content = { CategoryRow() })
             HomeSection(title = stringResource(R.string.section_best_seller_menu),
                 content = { MenuRow(dummyMenu) })
